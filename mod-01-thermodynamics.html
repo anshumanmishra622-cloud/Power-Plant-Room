@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOD-01 · Thermodynamics &amp; Rankine Cycle — Boiler Room</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a href="index.html" class="brand"><span class="dial"></span> Boiler Room</a>
+  <nav class="navlinks">
+    <a href="about.html">About</a>
+    <a href="mod-01-thermodynamics.html">MOD-01 Thermo</a>
+    <a href="mod-02-whrb.html">MOD-02 WHRB</a>
+    <a href="mod-03-equipment.html">MOD-03 Equipment</a>
+    <a href="mod-04-exam-prep.html">MOD-04 BOE Prep</a>
+    <a href="mod-05-plant-data.html">MOD-05 Plant Data</a>
+  </nav>
+</header>
+
+<section class="section texture" style="padding-top:56px;">
+  <span class="modtag">MOD-01 / Thermodynamics</span>
+  <h1 style="margin-top:16px;">Rankine Cycle &amp; the steam loop.</h1>
+  <p class="lede" style="margin-top:16px;">
+    Every WHRB unit on this plant is running the same four-step loop a textbook draws on a T-s diagram.
+    Knowing it cold is what separates reading a gauge from understanding what the gauge is telling you.
+  </p>
+</section>
+
+<section class="section">
+  <span class="kicker">The four processes</span>
+  <h2 style="margin-top:10px;margin-bottom:26px;">One loop, four strokes.</h2>
+
+  <div class="plate" style="overflow-x:auto;">
+    <div style="display:flex;align-items:stretch;gap:0;min-width:680px;">
+
+      <div style="flex:1;padding:16px;">
+        <span class="modcode">1 → 2</span>
+        <h3>Pump</h3>
+        <p style="font-size:0.88rem;">Isentropic compression. Feed water pushed from condenser pressure up to boiler pressure. Tiny work input — liquid is nearly incompressible.</p>
+      </div>
+      <div style="display:flex;align-items:center;color:var(--ember);font-size:1.4rem;padding:0 4px;">→</div>
+
+      <div style="flex:1;padding:16px;">
+        <span class="modcode">2 → 3</span>
+        <h3>Boiler</h3>
+        <p style="font-size:0.88rem;">Constant-pressure heat addition. Economiser preheats, evaporator turns water to saturated steam, superheater pushes it to 490°C.</p>
+      </div>
+      <div style="display:flex;align-items:center;color:var(--ember);font-size:1.4rem;padding:0 4px;">→</div>
+
+      <div style="flex:1;padding:16px;">
+        <span class="modcode">3 → 4</span>
+        <h3>Turbine</h3>
+        <p style="font-size:0.88rem;">Isentropic expansion. Steam gives up enthalpy as shaft work. Pressure and temperature both fall sharply.</p>
+      </div>
+      <div style="display:flex;align-items:center;color:var(--ember);font-size:1.4rem;padding:0 4px;">→</div>
+
+      <div style="flex:1;padding:16px;">
+        <span class="modcode">4 → 1</span>
+        <h3>Condenser</h3>
+        <p style="font-size:0.88rem;">Constant-pressure heat rejection. Exhaust steam gives up latent heat to cooling water, returns to saturated liquid.</p>
+      </div>
+
+    </div>
+  </div>
+  <p class="mono" style="margin-top:14px;font-size:0.78rem;">↻ state 1 feeds back into the pump — the loop closes here.</p>
+</section>
+
+<section class="section">
+  <span class="kicker">Vocabulary that gets mixed up</span>
+  <h2 style="margin-top:10px;margin-bottom:24px;">h<sub>f</sub>, h<sub>fg</sub>, h<sub>g</sub> — read the subscript.</h2>
+
+  <table>
+    <tr><th>Term</th><th>Meaning</th><th>Physically</th></tr>
+    <tr><td class="mono">h<sub>f</sub></td><td>Enthalpy of saturated liquid</td><td>Sensible heat already in the water at that pressure, before any boiling starts</td></tr>
+    <tr><td class="mono">h<sub>fg</sub></td><td>Latent heat of vaporisation</td><td>Heat needed to convert that saturated liquid fully to saturated vapour — no temperature rise, only phase change</td></tr>
+    <tr><td class="mono">h<sub>g</sub></td><td>Enthalpy of saturated vapour</td><td>h<sub>g</sub> = h<sub>f</sub> + h<sub>fg</sub> — total heat content of dry saturated steam</td></tr>
+  </table>
+  <p style="margin-top:14px;font-size:0.9rem;">
+    As boiler pressure rises toward the critical point, h<sub>fg</sub> shrinks — less latent heat is needed because the liquid and vapour phases are converging. At the critical point, h<sub>fg</sub> = 0.
+  </p>
+</section>
+
+<section class="section">
+  <span class="kicker">Two points people confuse</span>
+  <h2 style="margin-top:10px;margin-bottom:24px;">Critical Point vs. Triple Point.</h2>
+
+  <div class="plate-grid">
+    <div class="plate">
+      <span class="modtag">Critical Point</span>
+      <p style="margin-top:14px;">The state where liquid and vapour become indistinguishable — no boiling, no meniscus, just one supercritical fluid.</p>
+      <div class="readout" style="margin-top:14px;"><div><span class="val" style="font-size:1.2rem;">374.15</span><span class="unit">°C</span><span class="lbl">Critical Temperature (water)</span></div></div>
+      <div class="readout" style="margin-top:10px;"><div><span class="val" style="font-size:1.2rem;">~225.6</span><span class="unit">kg/cm²</span><span class="lbl">Critical Pressure (water)</span></div></div>
+    </div>
+    <div class="plate">
+      <span class="modtag">Triple Point</span>
+      <p style="margin-top:14px;">The single state where solid, liquid and vapour all coexist in equilibrium at once.</p>
+      <div class="readout" style="margin-top:14px;"><div><span class="val" style="font-size:1.2rem;">0.01</span><span class="unit">°C</span><span class="lbl">Triple Point Temperature</span></div></div>
+      <div class="readout" style="margin-top:10px;"><div><span class="val" style="font-size:1.2rem;">0.00611</span><span class="unit">bar</span><span class="lbl">Triple Point Pressure</span></div></div>
+    </div>
+  </div>
+  <p style="margin-top:16px;font-size:0.9rem;">
+    This plant runs at 69 kg/cm² normal working pressure — well below the critical point, which is exactly why there's a distinct boiling process happening inside the drum at all. A supercritical boiler wouldn't have a drum.
+  </p>
+</section>
+
+<section class="section">
+  <span class="kicker">Why pressure and temperature matter</span>
+  <h2 style="margin-top:10px;margin-bottom:24px;">The efficiency ceiling.</h2>
+  <p>
+    Thermal efficiency of the cycle is net work out over heat in:
+  </p>
+  <div class="plate mono" style="text-align:center;font-size:1rem;margin:18px 0;">
+    η = (W<sub>turbine</sub> − W<sub>pump</sub>) / Q<sub>boiler</sub>
+  </div>
+  <p>
+    The theoretical ceiling on that number is set by the Carnot limit, η<sub>max</sub> = 1 − T<sub>c</sub>/T<sub>h</sub>, using absolute temperatures of heat rejection and heat addition. Push T<sub>h</sub> up — raise boiler pressure and superheat temperature — and the ceiling rises with it. That's the entire reason superheating to 490°C instead of feeding the turbine saturated steam matters: it raises T<sub>h</sub>, raises efficiency, and as a side benefit keeps the turbine's last-stage steam dry enough to avoid blade erosion from moisture.
+  </p>
+</section>
+
+<section class="section">
+  <span class="kicker">Quick check</span>
+  <h2 style="margin-top:10px;margin-bottom:22px;">Q&amp;A — Thermodynamics</h2>
+
+  <details class="qa">
+    <summary>Why does superheating the steam improve cycle efficiency, not just turbine safety? <span class="tag">CONCEPT</span></summary>
+    <div class="a">It raises the average temperature at which heat is added during the 2→3 process. A higher heat-addition temperature pushes the Carnot ceiling up directly — the dryness-fraction benefit at the turbine exhaust is a separate, additional win, not the main mechanism.</div>
+  </details>
+
+  <details class="qa">
+    <summary>If h<sub>fg</sub> is the latent heat, why does it fall as pressure increases? <span class="tag">CONCEPT</span></summary>
+    <div class="a">Higher pressure pushes saturation temperature up, which pushes h<sub>f</sub> and h<sub>g</sub> closer together as both approach the critical point. At the critical point the two phases merge entirely, so h<sub>fg</sub> → 0.</div>
+  </details>
+
+  <details class="qa">
+    <summary>Is the pump process in a Rankine cycle isothermal or isentropic? <span class="tag">DEFINITION</span></summary>
+    <div class="a">Isentropic (constant entropy), not isothermal. Liquid water is nearly incompressible, so the temperature rise across the pump is small but real — entropy stays constant in the ideal case, temperature doesn't.</div>
+  </details>
+
+  <details class="qa">
+    <summary>What's the practical difference between the critical point and the triple point on a P-T diagram? <span class="tag">DEFINITION</span></summary>
+    <div class="a">The triple point is the bottom end of the saturation curve, where all three phases meet at one specific low-pressure, low-temperature state. The critical point is the top end, where the liquid-vapour line simply terminates — beyond it, "boiling" stops being a meaningful process.</div>
+  </details>
+</section>
+
+<footer class="texture">
+  <p>MOD-01 — THERMODYNAMICS &amp; RANKINE CYCLE</p>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

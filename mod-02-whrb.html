@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOD-02 · WHRB System — Boiler Room</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a href="index.html" class="brand"><span class="dial"></span> Boiler Room</a>
+  <nav class="navlinks">
+    <a href="about.html">About</a>
+    <a href="mod-01-thermodynamics.html">MOD-01 Thermo</a>
+    <a href="mod-02-whrb.html">MOD-02 WHRB</a>
+    <a href="mod-03-equipment.html">MOD-03 Equipment</a>
+    <a href="mod-04-exam-prep.html">MOD-04 BOE Prep</a>
+    <a href="mod-05-plant-data.html">MOD-05 Plant Data</a>
+  </nav>
+</header>
+
+<section class="section texture" style="padding-top:56px;">
+  <span class="modtag">MOD-02 / WHRB System</span>
+  <h1 style="margin-top:16px;">From kiln gas to 490°C steam.</h1>
+  <p class="lede" style="margin-top:16px;">
+    Four sponge iron kilns send their exhaust gas through these WHRB units instead of a stack.
+    No fuel is burned here — every kilojoule in the steam was already on its way out as waste heat.
+  </p>
+</section>
+
+<section class="section">
+  <span class="kicker">Natural circulation loop</span>
+  <h2 style="margin-top:10px;margin-bottom:26px;">No circulation pump — density does the work.</h2>
+  <p>Cooler water in the downcomers is denser than the steam-water mixture in the risers. That density difference alone drives the loop:</p>
+
+  <div class="plate" style="overflow-x:auto;margin-top:20px;">
+    <div style="display:flex;align-items:stretch;gap:0;min-width:680px;">
+      <div style="flex:1;padding:16px;">
+        <span class="modcode">DRUM</span>
+        <h3>Steam Drum</h3>
+        <p style="font-size:0.88rem;">Saturated water separates from steam. Steam exits to the superheaters; water feeds the downcomers.</p>
+      </div>
+      <div style="display:flex;align-items:center;color:var(--ember);font-size:1.4rem;padding:0 4px;">↓</div>
+      <div style="flex:1;padding:16px;">
+        <span class="modcode">EW06–16</span>
+        <h3>Downcomers</h3>
+        <p style="font-size:0.88rem;">Unheated, large-bore pipe carrying cool saturated water down to the bottom headers. SA106GR.B, 88.9–219.1mm.</p>
+      </div>
+      <div style="display:flex;align-items:center;color:var(--ember);font-size:1.4rem;padding:0 4px;">↓</div>
+      <div style="flex:1;padding:16px;">
+        <span class="modcode">EW05</span>
+        <h3>Water Wall Panels</h3>
+        <p style="font-size:0.88rem;">Membrane tube panels absorb radiant kiln-gas heat directly. Boiling begins here. 51×4.5mm, SA210GR.A1.</p>
+      </div>
+      <div style="display:flex;align-items:center;color:var(--ember);font-size:1.4rem;padding:0 4px;">↑</div>
+      <div style="flex:1;padding:16px;">
+        <span class="modcode">EW17–22</span>
+        <h3>Risers</h3>
+        <p style="font-size:0.88rem;">Carry the lighter steam-water mixture back up to the drum. SA234WPB, 88.9–114.3mm.</p>
+      </div>
+    </div>
+  </div>
+  <p class="mono" style="margin-top:14px;font-size:0.78rem;">↻ separated water in the drum re-enters the downcomers — the loop repeats continuously while firing.</p>
+</section>
+
+<section class="section">
+  <span class="kicker">Getting to 490°C</span>
+  <h2 style="margin-top:10px;margin-bottom:24px;">Economiser → Superheaters</h2>
+  <div class="plate-grid">
+    <div class="plate">
+      <span class="modtag">EW29–31</span>
+      <h3 style="margin-top:12px;">Economiser</h3>
+      <p style="margin-top:8px;font-size:0.9rem;">Sits in the cooler tail end of the gas path. Preheats feedwater before it enters the drum — squeezes out heat that would otherwise be lost, and reduces the thermal shock on the drum. 38.1×4.06mm, SA210GR.A1.</p>
+    </div>
+    <div class="plate">
+      <span class="modtag">EW40</span>
+      <h3 style="margin-top:12px;">Primary Superheater</h3>
+      <p style="margin-top:8px;font-size:0.9rem;">First superheat stage, positioned where gas is hotter. Takes saturated steam from the drum and starts raising it past saturation temperature. SA210GR.A1.</p>
+    </div>
+    <div class="plate">
+      <span class="modtag">EW41</span>
+      <h3 style="margin-top:12px;">Secondary Superheater</h3>
+      <p style="margin-top:8px;font-size:0.9rem;">Finishing stage — brings steam up to the full 490°C delivery temperature. Higher-grade material for the higher metal temperature here. SA213T11.</p>
+    </div>
+  </div>
+  <p style="margin-top:16px;font-size:0.85rem;" class="mono">EW07 &amp; EW08 require PWHT (post-weld heat treatment), electrode E7018-1 — full schedule in MOD-05.</p>
+</section>
+
+<section class="section">
+  <span class="kicker">The thing that gets people in the exam</span>
+  <h2 style="margin-top:10px;margin-bottom:24px;">Swell &amp; Shrinkage</h2>
+
+  <div class="plate-grid">
+    <div class="plate">
+      <span class="modtag" style="border-color:rgba(255,106,57,0.4);color:var(--ember);">Swell</span>
+      <p style="margin-top:14px;">Triggered by a <strong style="color:var(--paper);">sudden drop in drum pressure</strong> — typically a sharp rise in steam demand. The saturated water flashes, throwing off a burst of extra bubbles. The water-steam mixture's bulk volume jumps even though total water mass is falling. The level gauge reads a rise — at the exact moment the boiler actually needs more feed water, not less.</p>
+    </div>
+    <div class="plate">
+      <span class="modtag" style="border-color:rgba(143,182,201,0.4);color:var(--steam);">Shrinkage</span>
+      <p style="margin-top:14px;">The mirror image: a <strong style="color:var(--paper);">sudden rise in drum pressure</strong> (load drop, firing cut back) collapses bubbles back into solution. Mixture volume contracts. The level gauge reads a fall — even though water mass hasn't actually dropped.</p>
+    </div>
+  </div>
+
+  <p style="margin-top:18px;">
+    This is exactly why single-element level control (level only) is dangerous on a unit this size: it would respond to swell by cutting feedwater, worsening a real shortage. <strong style="color:var(--paper);">Three-element control</strong> — drum level, steam flow, and feedwater flow, in a cascade PID arrangement — uses the steam/feedwater flow mismatch to anticipate the correct feed response instead of waiting on a level signal that's lying to you for a few seconds.
+  </p>
+</section>
+
+<section class="section">
+  <span class="kicker">Quick check</span>
+  <h2 style="margin-top:10px;margin-bottom:22px;">Q&amp;A — WHRB System</h2>
+
+  <details class="qa">
+    <summary>What actually drives natural circulation if there's no pump? <span class="tag">CONCEPT</span></summary>
+    <div class="a">Density difference between the unheated, denser water in the downcomers and the heated, lighter steam-water mixture in the risers. That difference creates a continuous driving head — no mechanical pump required.</div>
+  </details>
+
+  <details class="qa">
+    <summary>Why does swell happen on a sudden steam demand increase, specifically? <span class="tag">MECHANISM</span></summary>
+    <div class="a">Higher demand pulls more steam out of the drum, which drops drum pressure. Lower pressure means the saturated water is now superheated relative to the new, lower saturation temperature — so it flashes into extra bubbles instantly, inflating the mixture's bulk volume.</div>
+  </details>
+
+  <details class="qa">
+    <summary>Why is the economiser placed at the cool end of the gas path, not the hot end? <span class="tag">DESIGN</span></summary>
+    <div class="a">It only needs to preheat feedwater, a relatively low-temperature task — putting it where gas has already given up most of its heat to the water walls and superheaters still recovers meaningful energy, while keeping the highest-grade tubes where the highest gas temperatures actually are.</div>
+  </details>
+
+  <details class="qa">
+    <summary>Why does the superheater come in two stages instead of one? <span class="tag">DESIGN</span></summary>
+    <div class="a">Splitting it allows an attemperation (desuperheating spray) stage in between, giving operators a control point to trim final steam temperature precisely to 490°C rather than relying purely on firing rate and gas-side heat transfer.</div>
+  </details>
+</section>
+
+<footer class="texture">
+  <p>MOD-02 — WHRB SYSTEM DESIGN</p>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

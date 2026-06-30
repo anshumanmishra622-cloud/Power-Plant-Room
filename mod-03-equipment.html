@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOD-03 · Fans, Pumps &amp; Instrumentation — Boiler Room</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a href="index.html" class="brand"><span class="dial"></span> Boiler Room</a>
+  <nav class="navlinks">
+    <a href="about.html">About</a>
+    <a href="mod-01-thermodynamics.html">MOD-01 Thermo</a>
+    <a href="mod-02-whrb.html">MOD-02 WHRB</a>
+    <a href="mod-03-equipment.html">MOD-03 Equipment</a>
+    <a href="mod-04-exam-prep.html">MOD-04 BOE Prep</a>
+    <a href="mod-05-plant-data.html">MOD-05 Plant Data</a>
+  </nav>
+</header>
+
+<section class="section texture" style="padding-top:56px;">
+  <span class="modtag">MOD-03 / Equipment</span>
+  <h1 style="margin-top:16px;">The machines around the machine.</h1>
+  <p class="lede" style="margin-top:16px;">
+    The boiler gets the attention, but gas doesn't move and water doesn't pressurise without fans, pumps,
+    and the instruments quietly watching both.
+  </p>
+</section>
+
+<section class="section">
+  <span class="kicker">Moving the gas</span>
+  <h2 style="margin-top:10px;margin-bottom:24px;">Fan types.</h2>
+
+  <table>
+    <tr><th>Fan</th><th>Role</th><th>Pressure zone</th></tr>
+    <tr><td><strong>ID Fan</strong> (Induced Draft)</td><td>Pulls gas through the boiler and out to stack — keeps the gas path under slight negative pressure</td><td>Suction side / downstream</td></tr>
+    <tr><td><strong>FD Fan</strong> (Forced Draft)</td><td>Pushes combustion air into the furnace under positive pressure</td><td>Discharge side / upstream</td></tr>
+    <tr><td><strong>PA Fan</strong> (Primary Air)</td><td>Carries and delivers fuel (e.g. pulverised coal) into the furnace</td><td>High-pressure, upstream</td></tr>
+  </table>
+
+  <div class="divider"></div>
+
+  <table>
+    <tr><th>Centrifugal</th><th>Axial</th></tr>
+    <tr><td>Air turns 90° through the impeller; good for higher pressure rise at moderate flow</td><td>Air moves straight through along the shaft axis; good for high flow at lower pressure rise</td></tr>
+    <tr><td>More tolerant of dust-laden, dirty gas streams</td><td>Better efficiency at high volumetric flow, more sensitive to particulate buildup on blades</td></tr>
+  </table>
+</section>
+
+<section class="section">
+  <span class="kicker">Moving the water</span>
+  <h2 style="margin-top:10px;margin-bottom:24px;">Centrifugal vs. Positive Displacement.</h2>
+
+  <table>
+    <tr><th></th><th>Centrifugal</th><th>Positive Displacement</th></tr>
+    <tr><td>Flow behaviour</td><td>Flow varies with system back-pressure — follows a head-flow curve</td><td>Delivers near-constant flow regardless of downstream pressure</td></tr>
+    <tr><td>Typical use here</td><td>Boiler feed pump (multistage, built for 69 kg/cm² delivery), cooling water, general transfer</td><td>Chemical dosing, metering pumps, reciprocating plunger pumps for precise low-flow high-pressure jobs</td></tr>
+    <tr><td>Needs a relief valve?</td><td>No — flow self-limits against a closed valve</td><td>Yes — a blocked discharge with no relief can burst the line</td></tr>
+  </table>
+
+  <p style="margin-top:18px;">
+    A reciprocating pump is the classic positive-displacement design: a piston or plunger drawing fluid in on the suction stroke and forcing a fixed volume out on the discharge stroke. That fixed volume per stroke is exactly why its flow doesn't care what the discharge pressure is doing — and exactly why it always needs a relief valve on the discharge side.
+  </p>
+</section>
+
+<section class="section">
+  <span class="kicker">Watching the process</span>
+  <h2 style="margin-top:10px;margin-bottom:24px;">Instrumentation.</h2>
+
+  <div class="plate-grid">
+    <div class="plate">
+      <h3>Vibrating Fork Level Switch</h3>
+      <p style="margin-top:8px;font-size:0.9rem;">A tuning fork vibrates at its natural frequency in air. When liquid covers it, the frequency damps measurably — that shift triggers the switch. No moving parts beyond the fork itself, reliable for high/low point-level alarms and pump dry-run protection.</p>
+    </div>
+    <div class="plate">
+      <h3>O₂ Analyser</h3>
+      <p style="margin-top:8px;font-size:0.9rem;">In-situ probe in the flue gas path measuring residual oxygen. Tells you how much excess air is going through — too little means incomplete combustion risk, too much means heat is being thrown away heating unnecessary air.</p>
+    </div>
+    <div class="plate">
+      <h3>Scrubber</h3>
+      <p style="margin-top:8px;font-size:0.9rem;">Wet gas-cleaning stage downstream of the boiler. Sprays liquid through the gas stream to capture particulate before it reaches the ID fan and stack, protecting the fan and meeting emission limits.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <span class="kicker">Quick check</span>
+  <h2 style="margin-top:10px;margin-bottom:22px;">Q&amp;A — Equipment</h2>
+
+  <details class="qa">
+    <summary>Why does a positive displacement pump need a relief valve but a centrifugal pump doesn't? <span class="tag">SAFETY</span></summary>
+    <div class="a">A centrifugal pump's flow drops toward zero as back-pressure rises toward shutoff head — it self-limits. A PD pump keeps trying to push the same fixed volume per stroke regardless of resistance, so a blocked line with no relief path will keep building pressure until something fails.</div>
+  </details>
+
+  <details class="qa">
+    <summary>Why is the ID fan placed downstream of the boiler rather than the FD fan doing all the work? <span class="tag">DESIGN</span></summary>
+    <div class="a">Pulling from downstream keeps the furnace and gas path under slight negative pressure (balanced draft), so any casing leakage draws air in rather than letting hot gas and combustion products leak out into the work area.</div>
+  </details>
+
+  <details class="qa">
+    <summary>What does the O₂ analyser reading actually tell an operator to do? <span class="tag">OPERATIONS</span></summary>
+    <div class="a">It's the feedback signal for air-fuel balance. A falling O₂ trend with stable load suggests trimming combustion air up; a high, climbing O₂ with no load change suggests excess air is being pulled in somewhere, wasting heat up the stack.</div>
+  </details>
+</section>
+
+<footer class="texture">
+  <p>MOD-03 — FANS, PUMPS &amp; INSTRUMENTATION</p>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOD-04 · BOE Exam Q&amp;A — Boiler Room</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a href="index.html" class="brand"><span class="dial"></span> Boiler Room</a>
+  <nav class="navlinks">
+    <a href="about.html">About</a>
+    <a href="mod-01-thermodynamics.html">MOD-01 Thermo</a>
+    <a href="mod-02-whrb.html">MOD-02 WHRB</a>
+    <a href="mod-03-equipment.html">MOD-03 Equipment</a>
+    <a href="mod-04-exam-prep.html">MOD-04 BOE Prep</a>
+    <a href="mod-05-plant-data.html">MOD-05 Plant Data</a>
+  </nav>
+</header>
+
+<section class="section texture" style="padding-top:56px;">
+  <span class="modtag">MOD-04 / BOE Exam Prep</span>
+  <h1 style="margin-top:16px;">Question bank.</h1>
+  <p class="lede" style="margin-top:16px;">Filter by category, or leave it on "All" and work straight through.</p>
+
+  <div class="chips">
+    <button class="chip active" data-cat="all">All</button>
+    <button class="chip" data-cat="thermo">Thermodynamics</button>
+    <button class="chip" data-cat="systems">Boiler Systems</button>
+    <button class="chip" data-cat="safety">Safety</button>
+    <button class="chip" data-cat="chem">Chemistry</button>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+
+  <details class="qa" data-cat="thermo">
+    <summary>What is dryness fraction, and why does it matter at the turbine's last stage? <span class="tag">THERMO</span></summary>
+    <div class="a">Dryness fraction (x) is the mass ratio of vapour to total mass in a wet steam mixture. As steam expands through the turbine its pressure and temperature fall, and if it crosses too far into the wet region, water droplets form and erode the last-stage blades. Superheating keeps x close enough to 1 through the early stages to delay that crossing.</div>
+  </details>
+
+  <details class="qa" data-cat="thermo">
+    <summary>Distinguish sensible heat from latent heat in the context of the evaporator. <span class="tag">THERMO</span></summary>
+    <div class="a">Sensible heat raises water's temperature without changing phase (this is h_f building up). Latent heat is absorbed entirely in changing phase from liquid to vapour at constant temperature (h_fg). The evaporator section is where latent heat addition happens — temperature holds at saturation temperature the whole time.</div>
+  </details>
+
+  <details class="qa" data-cat="thermo">
+    <summary>Why does specific volume of saturated steam fall as pressure rises? <span class="tag">THERMO</span></summary>
+    <div class="a">Higher pressure packs the same mass of steam molecules into less space — density rises, specific volume falls. This is also why higher-pressure steam lines can carry the same mass flow through a smaller pipe diameter.</div>
+  </details>
+
+  <details class="qa" data-cat="thermo">
+    <summary>What's "degree of superheat" and why track it separately from absolute steam temperature? <span class="tag">THERMO</span></summary>
+    <div class="a">It's the difference between actual steam temperature and the saturation temperature at that same pressure. Tracking it separately matters because saturation temperature itself shifts with pressure — 490°C steam at 69 kg/cm² has a very different margin above saturation than the same 490°C would at a different pressure.</div>
+  </details>
+
+  <details class="qa" data-cat="systems">
+    <summary>What do the steam drum's internal cyclone separators actually do? <span class="tag">SYSTEMS</span></summary>
+    <div class="a">They spin the incoming steam-water mixture from the risers, using centrifugal force to fling the heavier water droplets to the outside wall while drier steam continues to the outlet — reducing moisture carryover into the superheater.</div>
+  </details>
+
+  <details class="qa" data-cat="systems">
+    <summary>This plant uses natural circulation. When would a boiler need forced circulation instead? <span class="tag">SYSTEMS</span></summary>
+    <div class="a">At very high pressures approaching the critical point, the density difference between water and steam shrinks toward zero — there's not enough driving head left for natural circulation to work, so a circulating pump becomes necessary.</div>
+  </details>
+
+  <details class="qa" data-cat="systems">
+    <summary>What's the difference between continuous and intermittent blowdown? <span class="tag">SYSTEMS</span></summary>
+    <div class="a">Continuous blowdown runs constantly at a small, controlled rate from the drum's water surface, holding dissolved solids (TDS) at a steady target. Intermittent blowdown is a periodic manual or timed dump from the bottom header, aimed at clearing settled sludge rather than controlling TDS.</div>
+  </details>
+
+  <details class="qa" data-cat="systems">
+    <summary>Where does a safety valve's set pressure typically sit relative to NWP and MWP? <span class="tag">SYSTEMS</span></summary>
+    <div class="a">Above normal working pressure but at or below maximum working pressure — close enough above NWP to not lift during normal operation, but guaranteed to lift before the drum or any pressure part reaches MWP.</div>
+  </details>
+
+  <details class="qa" data-cat="systems">
+    <summary>What's the purpose of an economiser bypass damper? <span class="tag">SYSTEMS</span></summary>
+    <div class="a">It routes flue gas around the economiser during low-load or startup conditions, when gas temperatures are low enough that cooling them further risks acid dew-point corrosion on the economiser tubes.</div>
+  </details>
+
+  <details class="qa" data-cat="safety">
+    <summary>What's the purpose of a drum low-low level trip? <span class="tag">SAFETY</span></summary>
+    <div class="a">It force-trips the firing/heat input the instant drum level falls below a safe threshold — protecting the water wall tubes from running dry and overheating, which can cause tube rupture within seconds once the water-side cooling is lost.</div>
+  </details>
+
+  <details class="qa" data-cat="safety">
+    <summary>List the primary causes of boiler tube failure. <span class="tag">SAFETY</span></summary>
+    <div class="a">Overheating from low water level or internal scale deposits, corrosion from poor water chemistry or dissolved oxygen, erosion from high-velocity ash or soot particles, and mechanical fatigue from repeated thermal cycling or vibration.</div>
+  </details>
+
+  <details class="qa" data-cat="safety">
+    <summary>Why is firing with even momentarily low water level treated as a serious trip condition, not just an alarm? <span class="tag">SAFETY</span></summary>
+    <div class="a">Water-wall tubes depend on internal water flow to carry heat away from the metal. The moment a section runs dry, the tube wall temperature can climb past its design limit within seconds, weakening the metal toward rupture — there usually isn't time for a human response, which is why it's hard-wired to trip automatically.</div>
+  </details>
+
+  <details class="qa" data-cat="safety">
+    <summary>What is PWHT, and why do only some welded joints need it? <span class="tag">SAFETY</span></summary>
+    <div class="a">Post-Weld Heat Treatment relieves residual stress locked into the metal by welding. It's required where wall thickness, material grade, or service stress make residual stress a real risk to long-term integrity — thinner, lower-stress joints elsewhere on the same boiler may not need it.</div>
+  </details>
+
+  <details class="qa" data-cat="safety">
+    <summary>In IBR terminology, what's the distinction drawn between a "safety valve" and a "relief valve"? <span class="tag">SAFETY</span></summary>
+    <div class="a">"Safety valve" is the term used for steam (compressible fluid) service — it opens fully and rapidly (pop action) once set pressure is reached. "Relief valve" is the term used for liquid service, which tends to open more proportionally to overpressure rather than popping fully open.</div>
+  </details>
+
+  <details class="qa" data-cat="chem">
+    <summary>Why is feed water deaerated before it reaches the economiser? <span class="tag">CHEMISTRY</span></summary>
+    <div class="a">Dissolved oxygen in feed water causes pitting corrosion on boiler metal at operating temperature — deaeration strips it out mechanically (and a chemical oxygen scavenger typically backs it up) before the water ever sees boiler-side heat.</div>
+  </details>
+
+  <details class="qa" data-cat="chem">
+    <summary>What is TDS, and why does blowdown control it instead of just treating feed water harder? <span class="tag">CHEMISTRY</span></summary>
+    <div class="a">Total Dissolved Solids — the dissolved mineral content left behind as pure water evaporates to steam. Even well-treated feed water carries some solids, and since only water leaves as steam, those solids concentrate in the drum over time. Blowdown is what actually removes that buildup rather than preventing it from forming.</div>
+  </details>
+
+  <details class="qa" data-cat="chem">
+    <summary>What causes scale formation inside boiler tubes? <span class="tag">CHEMISTRY</span></summary>
+    <div class="a">Hardness salts (mainly calcium and magnesium compounds) in feed water precipitate out of solution onto the hottest internal tube surfaces. Scale is a poor heat conductor, so it forces tube metal temperature up for the same heat flux — a direct path toward overheating failure.</div>
+  </details>
+
+  <details class="qa" data-cat="chem">
+    <summary>Beyond corrosion, why else is dissolved oxygen specifically dangerous compared to other dissolved gases? <span class="tag">CHEMISTRY</span></summary>
+    <div class="a">It's an electrochemically active oxidiser at boiler metal temperatures, driving localised pitting rather than uniform corrosion — pitting concentrates metal loss at single points, making it far more likely to cause a through-wall failure than the same total metal loss spread evenly.</div>
+  </details>
+
+</section>
+
+<footer class="texture">
+  <p>MOD-04 — BOE EXAM Q&amp;A BANK</p>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
