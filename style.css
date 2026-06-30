@@ -1,0 +1,354 @@
+/* ============================================================
+   BOILER ROOM — design system
+   Palette: boiler-room dark + brass gauge + ember heat
+   ============================================================ */
+
+:root{
+  --ink: #0B1116;
+  --plate: #122230;
+  --plate-2: #18303f;
+  --paper: #EDE6D6;
+  --paper-dim: #B9B2A2;
+  --ember: #FF6A39;
+  --ember-dim: #B8431A;
+  --brass: #C9A227;
+  --steam: #8FB6C9;
+  --line: rgba(237,230,214,0.14);
+  --radius: 2px;
+  --display: 'Oswald', sans-serif;
+  --body: 'Inter', sans-serif;
+  --mono: 'IBM Plex Mono', monospace;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(255,106,57,0.06), transparent 60%),
+    var(--ink);
+  color:var(--paper);
+  font-family:var(--body);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+::selection{ background:var(--ember); color:var(--ink); }
+
+a{ color:inherit; }
+
+/* riveted/grid texture used behind hero + footer */
+.texture{
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ---------------- top bar ---------------- */
+.topbar{
+  position:sticky; top:0; z-index:50;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 22px;
+  background:rgba(11,17,22,0.86);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.brand{
+  display:flex; align-items:center; gap:10px;
+  font-family:var(--display);
+  letter-spacing:0.06em;
+  text-decoration:none;
+  font-size:1.05rem;
+  text-transform:uppercase;
+  color:var(--paper);
+}
+.brand .dial{
+  width:20px;height:20px;border-radius:50%;
+  border:2px solid var(--brass);
+  position:relative; flex:none;
+}
+.brand .dial::after{
+  content:''; position:absolute; left:50%; top:50%;
+  width:7px; height:1.6px; background:var(--ember);
+  transform-origin:left center;
+  transform:translate(0,-50%) rotate(35deg);
+}
+.navlinks{ display:flex; gap:4px; flex-wrap:wrap; }
+.navlinks a{
+  font-family:var(--mono);
+  font-size:0.72rem;
+  letter-spacing:0.03em;
+  text-decoration:none;
+  color:var(--steam);
+  padding:7px 10px;
+  border:1px solid transparent;
+  border-radius:var(--radius);
+  white-space:nowrap;
+}
+.navlinks a:hover, .navlinks a.active{
+  color:var(--paper);
+  border-color:var(--line);
+  background:var(--plate);
+}
+
+/* ---------------- module label / eyebrow ---------------- */
+.modtag{
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:var(--mono);
+  font-size:0.74rem;
+  letter-spacing:0.08em;
+  color:var(--brass);
+  border:1px solid rgba(201,162,39,0.4);
+  padding:5px 10px;
+  border-radius:var(--radius);
+  text-transform:uppercase;
+}
+.modtag::before{ content:'■'; font-size:0.55rem; color:var(--ember); }
+
+/* ---------------- typography ---------------- */
+h1,h2,h3{
+  font-family:var(--display);
+  text-transform:uppercase;
+  letter-spacing:0.02em;
+  font-weight:600;
+  margin:0;
+  color:var(--paper);
+}
+h1{ font-size:clamp(2.2rem, 6vw, 4rem); line-height:1.04; }
+h2{ font-size:clamp(1.5rem, 3.4vw, 2.2rem); line-height:1.15; }
+h3{ font-size:1.15rem; letter-spacing:0.04em; }
+p{ color:var(--paper-dim); margin:0 0 1em; }
+.lede{ font-size:1.1rem; color:var(--steam); max-width:62ch; }
+
+.section{ padding:64px 22px; max-width:1040px; margin:0 auto; }
+.section + .section{ border-top:1px solid var(--line); }
+
+/* ---------------- gauge plate cards ---------------- */
+.plate{
+  background:linear-gradient(180deg, var(--plate), var(--plate-2));
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:24px;
+}
+.plate-grid{
+  display:grid; gap:16px;
+  grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+}
+
+/* module nav cards on home */
+.modcard{
+  display:block; text-decoration:none;
+  background:linear-gradient(180deg, var(--plate), var(--plate-2));
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px;
+  position:relative;
+  transition:transform .18s ease, border-color .18s ease;
+  overflow:hidden;
+}
+.modcard:hover{ transform:translateY(-3px); border-color:rgba(255,106,57,0.5); }
+.modcard::before{
+  content:''; position:absolute; left:0; top:0; bottom:0; width:3px;
+  background:var(--ember); opacity:0; transition:opacity .18s ease;
+}
+.modcard:hover::before{ opacity:1; }
+.modcode{
+  font-family:var(--mono); font-size:0.72rem; color:var(--brass);
+  letter-spacing:0.08em; display:block; margin-bottom:10px;
+}
+.modcard h3{ color:var(--paper); margin-bottom:8px; }
+.modcard p{ font-size:0.92rem; margin:0; }
+
+/* ---------------- tables (readout style) ---------------- */
+table{ width:100%; border-collapse:collapse; font-size:0.92rem; }
+th,td{ text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); }
+th{
+  font-family:var(--mono); font-size:0.72rem; letter-spacing:0.05em;
+  text-transform:uppercase; color:var(--brass);
+}
+td{ color:var(--paper-dim); }
+td.num, .mono{ font-family:var(--mono); color:var(--steam); }
+tr:last-child td{ border-bottom:none; }
+
+/* ---------------- readout stat ---------------- */
+.readout{
+  font-family:var(--mono);
+  display:flex; align-items:baseline; gap:8px;
+  border:1px solid var(--line); border-radius:var(--radius);
+  padding:14px 16px; background:rgba(0,0,0,0.18);
+}
+.readout .val{ font-size:1.6rem; color:var(--ember); font-weight:600; }
+.readout .unit{ font-size:0.78rem; color:var(--steam); }
+.readout .lbl{ display:block; font-size:0.68rem; color:var(--paper-dim); letter-spacing:0.05em; text-transform:uppercase; margin-top:3px;}
+
+/* ---------------- Q&A accordion ---------------- */
+.qa{ border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; margin-bottom:10px; background:rgba(0,0,0,0.14); }
+.qa summary{
+  cursor:pointer; list-style:none; padding:16px 18px;
+  display:flex; align-items:flex-start; gap:12px;
+  font-weight:500; color:var(--paper);
+}
+.qa summary::-webkit-details-marker{ display:none; }
+.qa summary::before{
+  content:'+'; font-family:var(--mono); color:var(--ember);
+  flex:none; width:18px; font-size:1.1rem; line-height:1;
+}
+.qa[open] summary::before{ content:'–'; }
+.qa .a{ padding:0 18px 18px 48px; color:var(--paper-dim); font-size:0.94rem; }
+.qa .tag{
+  font-family:var(--mono); font-size:0.65rem; color:var(--brass);
+  border:1px solid rgba(201,162,39,0.35); padding:2px 7px; border-radius:2px;
+  margin-left:auto; flex:none; white-space:nowrap;
+}
+
+/* filter chips for exam page */
+.chips{ display:flex; gap:8px; flex-wrap:wrap; margin:20px 0 28px; }
+.chip{
+  font-family:var(--mono); font-size:0.72rem; letter-spacing:0.03em;
+  padding:7px 13px; border-radius:20px; border:1px solid var(--line);
+  background:transparent; color:var(--steam); cursor:pointer;
+}
+.chip.active{ background:var(--ember); color:var(--ink); border-color:var(--ember); font-weight:600; }
+
+/* ---------------- diagram blocks ---------------- */
+.diagram{
+  border:1px solid var(--line); border-radius:var(--radius);
+  padding:24px; background:rgba(0,0,0,0.18);
+  display:flex; justify-content:center;
+}
+
+/* ---------------- footer ---------------- */
+footer{
+  padding:40px 22px; text-align:center;
+  border-top:1px solid var(--line);
+}
+footer p{ font-family:var(--mono); font-size:0.74rem; color:var(--paper-dim); }
+
+/* ---------------- misc ---------------- */
+.kicker{ font-family:var(--mono); font-size:0.78rem; color:var(--steam); letter-spacing:0.04em; }
+.divider{ height:1px; background:var(--line); margin:40px 0; }
+.btn{
+  display:inline-block; font-family:var(--mono); font-size:0.8rem;
+  letter-spacing:0.04em; text-decoration:none; color:var(--ink);
+  background:var(--ember); padding:11px 18px; border-radius:var(--radius);
+  font-weight:600;
+}
+.btn.ghost{
+  background:transparent; color:var(--paper); border:1px solid var(--line);
+}
+
+/* ---------------- pressure gauge (hero signature) ---------------- */
+.gauge-wrap{
+  position:relative; width:300px; height:152px; max-width:86vw;
+  margin:0 auto;
+  overflow:hidden;
+}
+.gauge-face{
+  position:absolute; left:50%; top:0; width:300px; height:300px;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background: conic-gradient(from -90deg at 50% 50%,
+    var(--steam) 0deg 142.2deg,
+    var(--ember) 142.2deg 180deg,
+    transparent 180deg 360deg);
+  opacity:0.9;
+}
+.gauge-face::after{
+  content:'';
+  position:absolute; left:50%; top:50%; width:230px; height:230px;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:var(--ink);
+  box-shadow:0 0 0 1px var(--line);
+}
+.gauge-needle{
+  position:absolute; left:50%; bottom:0; width:3px; height:120px;
+  background:linear-gradient(var(--paper), var(--brass));
+  transform-origin:bottom center;
+  border-radius:3px 3px 0 0;
+  z-index:2;
+}
+.gauge-hub{
+  position:absolute; left:50%; bottom:-11px; width:22px; height:22px;
+  background:var(--brass); border-radius:50%;
+  transform:translateX(-50%);
+  border:3px solid var(--ink); z-index:3;
+}
+.gauge-lbl{
+  position:absolute; bottom:2px; font-family:var(--mono);
+  font-size:0.7rem; color:var(--paper-dim);
+}
+.gauge-lbl.left{ left:4px; }
+.gauge-lbl.right{ right:4px; }
+.gauge-lbl.top{ left:50%; top:0; transform:translateX(-50%); color:var(--ember); }
+
+.readout-grid{
+  display:grid; gap:1px; background:var(--line);
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
+  margin-top:28px;
+}
+.readout-grid .readout{ border:none; border-radius:0; background:var(--plate); }
+
+@media (max-width: 640px){
+  .navlinks{ display:none; }
+  .section{ padding:44px 18px; }
+}
+
+/* ---------------- about page: badge photo ---------------- */
+.badge{
+  width:200px; flex:none;
+  border:2px solid var(--brass);
+  padding:8px;
+  background:var(--plate);
+  position:relative;
+}
+.badge::before{
+  content:''; position:absolute; inset:4px;
+  border:1px solid rgba(201,162,39,0.35);
+  pointer-events:none;
+}
+.badge img{
+  width:100%; height:220px; object-fit:cover; display:block;
+  filter:saturate(0.92) contrast(1.03);
+}
+.badge-label{
+  font-family:var(--mono); font-size:0.66rem; letter-spacing:0.08em;
+  color:var(--brass); text-align:center; text-transform:uppercase;
+  padding-top:8px;
+}
+.hero-flex{
+  display:flex; gap:36px; align-items:flex-start; flex-wrap:wrap;
+}
+.hero-flex .hero-text{ flex:1; min-width:260px; }
+
+/* certificate cards */
+.cert-card{
+  background:linear-gradient(180deg, var(--plate), var(--plate-2));
+  border:1px solid var(--line);
+  border-left:3px solid var(--brass);
+  border-radius:var(--radius);
+  padding:20px 22px;
+  position:relative;
+}
+.cert-card .seal{
+  font-family:var(--mono); font-size:0.66rem; color:var(--brass);
+  letter-spacing:0.08em; text-transform:uppercase;
+  display:block; margin-bottom:8px;
+}
+.cert-card h3{ font-size:1.02rem; color:var(--paper); margin-bottom:6px; }
+.cert-card .issuer{ font-family:var(--mono); font-size:0.8rem; color:var(--steam); }
+
+.timeline-item{
+  display:flex; gap:18px; padding:18px 0;
+  border-bottom:1px solid var(--line);
+}
+.timeline-item:last-child{ border-bottom:none; }
+.timeline-item .year{
+  font-family:var(--mono); font-size:0.8rem; color:var(--brass);
+  flex:none; width:90px; padding-top:2px;
+}
+.timeline-item .content h3{ font-size:1rem; margin-bottom:4px; }
+.timeline-item .content p{ margin:0; font-size:0.88rem; }
